@@ -1,0 +1,33 @@
+<Project>
+
+    <PropertyGroup Label="Packaging">
+        <Version>2.1.0</Version>
+        <Copyright>Copyright © Alex Regueiro 2010; Copyright © WPF-Math Contributors 2023; Copyright © XAML-Math Contributors 2023</Copyright>
+
+        <Authors>ForNeVeR</Authors>
+        <PackageProjectUrl>https://github.com/ForNeVeR/xaml-math</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/ForNeVeR/xaml-math.git</RepositoryUrl>
+        <PackageTags>latex;formula</PackageTags>
+
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <PropertyGroup Label="ChangelogAutomation">
+        <ChangelogFilePath>..\..\CHANGELOG.md</ChangelogFilePath>
+    </PropertyGroup>
+
+    <ItemGroup Label="Packaging">
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <PropertyGroup Condition=" '$(MSBuildProjectExtension)' == '.csproj' ">
+        <LangVersion>11</LangVersion>
+        <Nullable Condition=" $([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'netstandard2.1')) ">enable</Nullable>
+        <Nullable Condition=" '$(Nullable)' != 'enable' ">annotations</Nullable>
+    </PropertyGroup>
+</Project>

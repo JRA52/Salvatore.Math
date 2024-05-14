@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net462;netstandard2.0;net6.0</TargetFrameworks>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageId>AvaloniaMath</PackageId>
+        <Title>Avalonia-Math</Title>
+        <PackageLicenseExpression>MIT AND OFL-1.1</PackageLicenseExpression>
+        <PackageTags>$(PackageTags);avalonia</PackageTags>
+        <Description>.NET library for rendering mathematical formulae using the LaTeX typsetting style, for the Avalonia framework.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- TODO[#352]: Include after we support Avalonia 11 -->
+        <!-- See this: https://github.com/AvaloniaUI/Avalonia/blob/81fab67becf5499f1893d23e556e1b84abcce135/src/Avalonia.Build.Tasks/GenerateAvaloniaResourcesTask.cs#L39-L43 -->
+        <!-- <_Font Include="..\..\fonts\*.ttf" Visible="false" />-->
+        <!-- <AvaloniaResource Include="@(_Font->'%(FullPath)')"-->
+        <!--                   Link="Fonts\@(_Font->'%(Filename)').ttf"-->
+        <!--                   Visible="true"/>-->
+        <None Remove="Fonts\*.ttf" />
+        <AvaloniaResource Include="Fonts\*.ttf" />
+        <None Include="..\..\fonts\LICENSES.md" Pack="true" PackagePath="\FONT-LICENSES.md" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Update="**\*.xaml.cs">
+            <DependentUpon>%(Filename)</DependentUpon>
+        </Compile>
+        <AvaloniaResource Include="**\*.xaml">
+            <SubType>Designer</SubType>
+        </AvaloniaResource>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Avalonia" />
+        <PackageReference Include="Nullable" PrivateAssets="All" />
+        <PackageReference Include="ChangelogAutomation.MSBuild" PrivateAssets="All" />
+        <PackageReference Include="System.Reactive" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\XamlMath.Shared\XamlMath.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,64 @@
+<Page x:Class="WpfMath.Example.Pages.FactorialGuia"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfMath.Example.Pages"
+      xmlns:controls="clr-namespace:WpfMath.Controls;assembly=WpfMath"
+      mc:Ignorable="d" 
+      Title="FactorialGuia">
+
+    <Grid>
+        <ScrollViewer
+            Background="white"
+            Width="Auto"
+            Height="Auto"            
+            HorizontalScrollBarVisibility="Auto"
+            VerticalScrollBarVisibility="Visible">
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock x:Name="Titulo"
+                    Margin="20"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    FontSize="24">
+                    <Run Text="Factorial"/>
+                    <Run Language="es-mx" Text=":"/>
+                    <LineBreak/>
+                    <Run Language="es-mx" Text="Guia"/>
+                </TextBlock>
+
+                <TextBlock
+                 Margin="20,10,30,10">
+                    <controls:FormulaControl
+                        SnapsToDevicePixels="True"
+                        Formula="\text{Simplifica:}\\
+                        \frac{6!}{3!}="/>
+                    <TextBox Name="ejercicio1"
+                        Text="Comprueba tu Resultado"
+                        Margin="5,0,0,7"
+                        FontFamily="Times New Roman"
+                        FontSize="18"
+                        Background="Transparent"
+                        KeyDown="Ejercicio1_KeyDown">                           
+                    </TextBox>
+                </TextBlock>
+
+                <TextBlock Name = "ejercicio1_resultado"
+                               Visibility="Collapsed"
+                               Margin="20,10,30,10">
+                        <controls:FormulaControl
+                             SnapsToDevicePixels="True"
+                             Formula="\frac{6!}{3!}=\frac{6\cdot5\cdot4\cdot \cancel{3!}}{\cancel{3!}}=6\cdot5\cdot4 = 120\\"/>
+                    </TextBlock>
+                    <Button Click="Button_Click"
+                            Content="Solucion "
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Margin="10,10,10,10"
+                            Background="Transparent"
+                            BorderBrush="LightGray" />      
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

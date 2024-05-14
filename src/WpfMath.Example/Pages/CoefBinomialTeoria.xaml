@@ -1,0 +1,70 @@
+<Page x:Class="WpfMath.Example.Pages.CoefBinomialTeoria"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:controls="clr-namespace:WpfMath.Controls;assembly=WpfMath"
+      mc:Ignorable="d" 
+      Title="CoefBinomialTeoria">
+
+    <Grid>
+        <ScrollViewer
+           Background="white"
+            Width="Auto"
+            Height="Auto"
+            HorizontalScrollBarVisibility="Auto"
+            VerticalScrollBarVisibility="Visible">
+            
+            <StackPanel>
+                <TextBlock x:Name="Titulo"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    FontSize="24"
+                    Margin="20">
+                <Run Text="Coeficiente Binomial"/>
+                <Run Language="es-mx" Text=":"/>
+                <LineBreak/>
+                <Run Language="es-mx" Text="Teoria"/>
+                </TextBlock>
+
+                <TextBlock x:Name="Formula_1"
+                           Margin="20,10,30,10">
+                    <controls:FormulaControl Name="FormulaControl"
+                                             SnapsToDevicePixels="True"
+                                             Formula="\text {El Coeficiente Binomial o Numero Combinatorio es igual al numero de subconjuntos de K elementos que tiene un conjunto de N elementos}\\
+                                             C(n,k)=C_{n}^k= \binom{n}{k}  \frac{n!}{k!(n - k)!}"/>
+                </TextBlock>
+
+                <TextBlock Name="Formula_2"
+                       Margin="20,10,30,10">
+                <controls:FormulaControl Name="FormulaControl_2"
+                                         SnapsToDevicePixels="True"
+                                         Formula="\text{Ejemplo, si tenemos el siguiente conjunto }\\  
+                                                  \left\lbrace A, B, C, D \right\rbrace\\ 
+                                                  \text {Podemos obtener los siguientes sub-conjuntos}\\
+                                                  \left\lbrace A, B \right\rbrace \left\lbrace B, C \right\rbrace \\ \left\lbrace A, C \right\rbrace \left\lbrace B, D \right\rbrace \\ \left\lbrace A, D \right\rbrace \left\lbrace C, D \right\rbrace\\
+                                                  \text{(Notese que El orden no importa Y que no se pueden repetir)}"/>
+                </TextBlock>
+
+                <TextBlock x:Name="Coeff_Prop"
+                           Margin="20,10,30,10">
+                    <controls:FormulaControl Name="Coeff_prop"
+                         SnapsToDevicePixels="True"
+                         Formula="\text{Propiedades:}\\
+                        \binom{n}{0}=1\\
+                        \binom{n}{n}=1\\
+                        \binom{1}{n}=n\\
+                        \binom{n}{k}=0\text{ Para } k>n  \text{ ó } k \langle 0" />
+                </TextBlock>
+
+                <TextBlock x:Name="Regla_Pascal"
+                           Margin="20,10,30,10">
+                    <controls:FormulaControl Name="Regla_pascal"
+                        SnapsToDevicePixels="True"
+                        Formula= "\text{Regla de Pascal:}\\
+                                 \binom{n}{k} =  \binom{n-1}{k-1} +\binom{n-1}{k}"/>
+                </TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,149 @@
+<Page x:Class="WpfMath.Example.Pages.CoefBinomialGuia"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfMath.Example.Pages"
+      xmlns:controls="clr-namespace:WpfMath.Controls;assembly=WpfMath"
+      mc:Ignorable="d" 
+      Title="CoefBinomialGuia">
+
+    <Grid>
+        <ScrollViewer
+             Background="white"
+            Width="Auto"
+            Height="Auto"            
+            HorizontalScrollBarVisibility="Auto"
+            VerticalScrollBarVisibility="Visible">
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock x:Name="Titulo"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    FontSize="24">
+                <Run Text="Coeficiente Binomial"/>
+                <Run Language="es-mx" Text=":"/>
+                <LineBreak/>
+                <Run Language="es-mx" Text="Guia"/>
+                </TextBlock>
+
+                <TextBlock
+                           Margin="20,10,30,10">
+                    <controls:FormulaControl
+                                             SnapsToDevicePixels="True"
+                                             Formula="\binom{5}{2}=\frac{5!}{2! (5 - 2)!} = \frac{120}{2 \cdot 6}= 10"/>
+                </TextBlock>
+    
+                <TextBlock Margin="20,10,30,10">                    
+                    <controls:FormulaControl SnapsToDevicePixels="True"
+                                             Formula="\binom{6}{3}= "/>
+                    <TextBox Name="ejercicio1"
+                        Text="Comprueba tu Resultado"
+                        Margin="5,0,0,7"
+                        FontFamily="Times New Roman"
+                        FontSize="18"
+                        Background="Transparent"
+                        KeyDown="Ejercicio1_KeyDown">                           
+                    </TextBox>
+                </TextBlock>
+
+                <TextBlock Name = "ejercicio1_resultado"
+                           Visibility="Collapsed"
+                           Margin="20,10,30,10">
+                    <controls:FormulaControl
+                         SnapsToDevicePixels="True"
+                         Formula="\binom{6}{3}= \frac{6!}{3!(6-3)!}=\frac{6!}{3!\cdot3!}= \frac{6\cdot5\cdot4\cdot\cancel {3!}}{3!\cdot\cancel{3!}}=\frac{6\cdot5\cdot4}{3!}= \frac{\cancel6\cdot5\cdot4}{\cancel 6}=20"/>
+                </TextBlock>
+                <Button Click="Button_Click"
+                        Content="Solucion "
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Margin="10,10,10,10"
+                        Background="Transparent"
+                        BorderBrush="LightGray"
+                />
+                
+                <TextBlock Margin="20,10,30,10">                    
+                    <controls:FormulaControl SnapsToDevicePixels="True"
+                                 Formula="\binom{8}{2}="/>
+                    <TextBox Name="ejercicio2"
+                            Text="?"
+                            Margin="5,0,0,7"
+                            FontFamily="Times New Roman"
+                            FontSize="18"
+                            Background="Transparent"
+                            KeyDown="Ejercicio2_KeyDown">                           
+                    </TextBox>
+                </TextBlock>
+                    <TextBlock Name = "ejercicio2_resultado"
+                           Visibility="Collapsed"
+                           Margin="20,10,30,10">
+                    <controls:FormulaControl
+                         SnapsToDevicePixels="True"
+                         Formula="\binom{8}{2}=\frac{8!}{2!(8-2)!}=\frac{8!}{2!\cdot6!}= \frac{8\cdot7\cdot\cancel {6!}}{2!\cdot\cancel{6!}}=\frac{8\cdot7}{2}= 28"/>
+                    </TextBlock>                
+                    <Button Click="Button_Click_2"
+                         Content="Solucion "
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Bottom"
+                         Margin="10,10,10,10"
+                         Background="Transparent"
+                         BorderBrush="LightGray"/>
+
+                <TextBlock Margin="20,10,30,10">                    
+                    <controls:FormulaControl SnapsToDevicePixels="True"
+                                 Formula="\binom{9}{4}="/>
+                    <TextBox Name="ejercicio3"
+                            Text="?"
+                            Margin="5,0,0,7"
+                            FontFamily="Times New Roman"
+                            FontSize="18"
+                            Background="Transparent"
+                            KeyDown="Ejercicio3_KeyDown">                           
+                    </TextBox>
+                </TextBlock>
+                <TextBlock Name = "ejercicio3_resultado"
+                           Visibility="Collapsed"
+                           Margin="20,10,30,10">
+                    <controls:FormulaControl
+                         SnapsToDevicePixels="True"
+                         Formula="\binom{9}{4}=\frac{9!}{4!(9-4)!}=\frac{9!}{4!\cdot5!}= \frac{9\cdot8\cdot7\cdot6\cdot\cancel {5!}}{4!\cdot\cancel{5!}}=\frac{9\cdot 8\cdot7\cdot6}{4!}= \frac{9\cdot 8\cdot7\cdot6}{24}=126"/>
+                </TextBlock>
+                <Button Click="Button_Click_3"
+                         Content="Solucion"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Bottom"
+                         Margin="10,10,10,10"
+                         Background="Transparent"
+                         BorderBrush="LightGray"/>
+
+                <TextBlock Margin="20,10,30,10">                    
+                    <controls:FormulaControl SnapsToDevicePixels="True"
+                                 Formula="\binom{20}{3}="/>
+                    <TextBox Name="ejercicio4"
+                            Text="?"
+                            Margin="5,0,0,7"
+                            FontFamily="Times New Roman"
+                            FontSize="18"
+                            Background="Transparent"
+                            KeyDown="Ejercicio4_KeyDown">                           
+                    </TextBox>
+                </TextBlock>
+                    <TextBlock Name = "ejercicio4_resultado"
+                               Visibility="Collapsed"
+                               Margin="20,10,30,10">
+                    <controls:FormulaControl
+                         SnapsToDevicePixels="True"
+                         Formula="\binom{20}{3}=\frac{20!}{3!(20-3)!}=\frac{20!}{3!\cdot17!}= \frac{20\cdot19\cdot18\cdot\cancel{17!}}{3!\cdot\cancel{17!}}=\frac{20\cdot 19\cdot18}{3!}= \frac{20\cdot 19\cdot18}{6}=1140"/>
+                    </TextBlock>
+                    <Button Click="Button_Click_4"
+                         Content="Solucion"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Bottom"
+                         Margin="10,10,10,10"
+                         Background="Transparent"
+                         BorderBrush="LightGray"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
